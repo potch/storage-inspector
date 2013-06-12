@@ -3,15 +3,56 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-    <title>Woot</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        height: 100%;
+      }
+      #panel {
+        background: #eee;
+        display: flex;
+        font: normal 12px sans-serif;
+        height: 100%;
+      }
+      #panel > ul {
+        border-right: 1px solid #000;
+        height: 100%;
+        width: 200px;
+      }
+      li {
+        padding: 1em;
+        position: relative;
+      }
+      li.active {
+        background: #ccc;
+      }
+      li.active:after {
+        background: #eee;
+        border-color: #000 transparent transparent #000 ;
+        border: 1px solid #000;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 7px;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(5px) rotate(-45deg);
+        width: 7px;
+      }
     </style>
   </head>
   <body>
-    <h1>Woot</h1>
-
-    <script>
-
-    </script>
+    <div id="panel">
+      <ul>
+        <li class="active">localStorage</li>
+        <li>sessionStorage</li>
+        <li>indexedDB</li>
+      </ul>
+    </div>
   </body>
 </html>
